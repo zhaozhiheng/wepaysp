@@ -1,9 +1,12 @@
 package com.zbsp.wepaysp.vo.edu;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 public class AlipayEduBillVO {
 
+    private String iwoid;
     private String outTradeNo;
     private String childName;
     private String userMobile;
@@ -14,6 +17,11 @@ public class AlipayEduBillVO {
     private String chargeItem;
     private Integer amount;
     private List chargeItems;// CharegeItems的List
+    private Date gmtPayment;
+    private String buyerLogonId;
+    private String tradeNo;
+    private String orderStatusStr;
+    private BigDecimal amountYuan;
 
     public String getOutTradeNo() {
         return outTradeNo;
@@ -93,6 +101,54 @@ public class AlipayEduBillVO {
 
     public void setChargeItems(List chargeItems) {
         this.chargeItems = chargeItems;
+    }
+
+    public Date getGmtPayment() {
+        return gmtPayment;
+    }
+
+    public void setGmtPayment(Date gmtPayment) {
+        this.gmtPayment = gmtPayment;
+    }
+
+    public String getBuyerLogonId() {
+        return buyerLogonId;
+    }
+
+    public void setBuyerLogonId(String buyerLogonId) {
+        this.buyerLogonId = buyerLogonId;
+    }
+
+    public String getTradeNo() {
+        return tradeNo;
+    }
+
+    public void setTradeNo(String tradeNo) {
+        this.tradeNo = tradeNo;
+    }
+
+    public String getOrderStatusStr() {
+        return orderStatusStr;
+    }
+
+    public void setOrderStatusStr(String orderStatusStr) {
+        this.orderStatusStr = orderStatusStr;
+    }
+
+    public BigDecimal getAmountYuan() {
+        return amountYuan;
+    }
+
+    public void setAmountYuan(BigDecimal amountYuan) {
+        this.amountYuan = amountYuan;
+    }
+
+    public String getIwoid() {
+        return iwoid;
+    }
+    
+    public void setIwoid(String iwoid) {
+        this.iwoid = iwoid;
     }
 
 }

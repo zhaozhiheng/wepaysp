@@ -1,9 +1,13 @@
 package com.zbsp.wepaysp.api.service.edu;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import com.zbsp.wepaysp.po.edu.AlipayEduTotalBill;
+import com.zbsp.wepaysp.po.edu.AlipayEduTotalBill.OrderStatus;
 import com.zbsp.wepaysp.vo.edu.AlipayEduTotalBillVO;
 
 /**
@@ -57,5 +61,21 @@ public interface AlipayEduTotalBillService {
     public Map<String, Object> doTransSaveTotalBill(String schoolNo, String billName, String endTime, String excelPath, List<ArrayList<String>> dataList);
 
     public AlipayEduTotalBillVO doJoinTransQueryAlipayEduTotalBillByOid(String totalBillOid);
+
+    /**
+     * 更新缴费账单为已发送
+     * @param totalBillOids
+     * @param time
+     */
+    public void doTransTotalBillSent(Set<String> totalBillOids, Date time);
+    
+    /**
+     * 查询有效分钟内待发送的缴费账单
+     * @param validMins
+     * @return
+     */
+    public List<AlipayEduTotalBill> doJoinTransQueryTotalBillOfWaitingSend(Integer validMins);
+
+    public void doTransUpdateTotalBillList(List<AlipayEduTotalBill> sendSuceessList);
     
 }
